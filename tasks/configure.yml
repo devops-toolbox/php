@@ -1,0 +1,11 @@
+---
+# Configure php
+
+- name: service is enabled and started
+  service:
+    name: "{{ item }}"
+    enabled: true
+    state: started
+  become: true
+  loop: "{{ php_services_enable }}"
+  when: php_enable_service

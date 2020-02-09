@@ -1,0 +1,44 @@
+---
+# vars file for packages
+
+# Detected OS
+my_os: "{{ ansible_distribution }}_{{ ansible_distribution_major_version }}"
+
+# Repos create
+php_repos_create: "{{ _php_repos_create['all']
+  | union ( _php_repos_create[my_os]
+  | default([]) ) }}"
+
+# Repos download
+php_repos_download: "{{ _php_repos_download['all']
+  | union ( _php_repos_download[my_os]
+  | default([]) ) }}"
+
+# Templates Copy
+php_templates_copy: "{{ _php_templates_copy['all']
+  | union ( _php_templates_copy[my_os]
+  | default([]) ) }}"
+
+# Services Enable
+php_services_enable: "{{ _php_services_enable['all']
+  | union ( _php_services_enable[my_os]
+  | default([]) ) }}"
+
+# SELinux Enable
+php_selinux_enable: "{{ _php_selinux_enable['all']
+  | union ( _php_selinux_enable[my_os]
+  | default([]) ) }}"
+
+# Packages lists
+php_packages_remove: "{{ _php_packages_remove['all']
+  | union ( _php_packages_remove[my_os]
+  | default([]) ) }}"
+php_packages_repos: "{{ _php_packages_repos['all']
+  | union ( _php_packages_repos[my_os]
+  | default([]) ) }}"
+php_packages_prereq: "{{ _php_packages_prereq['all']
+  | union ( _php_packages_prereq[my_os]
+  | default([]) ) }}"
+php_packages_install: "{{ _php_packages_install['all']
+  | union ( _php_packages_install[my_os]
+  | default([]) ) }}"
