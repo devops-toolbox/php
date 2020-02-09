@@ -8,10 +8,10 @@ php: Php
 Ansible galaxy:
 ---------------
 
-[https://galaxy.ansible.com/devops-toolbox.php](https://galaxy.ansible.com/devops-toolbox.php)
+[https://galaxy.ansible.com/devopstoolbox.php](https://galaxy.ansible.com/devopstoolbox.php)
 
 ```bash
-ansible-galaxy install devops-toolbox.php
+ansible-galaxy install devopstoolbox.php
 ```
 
 Requirements
@@ -60,7 +60,7 @@ Example Playbook
   tasks:
     - name: php is configured
       import_role:
-        name: devops-toolbox.php
+        name: devopstoolbox.php
       vars:
         php_packages_state: present
         php_remove_packages: true
@@ -89,4 +89,4 @@ MIT
 Author Information
 ------------------
 
-- [Mihai Criveti](https://www.linkedin.com/in/devops-toolbox.)
+- [Mihai Criveti](https://www.linkedin.com/in/devopstoolbox.)
